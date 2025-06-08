@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef _BDROID_BUILDCFG_H
-#define _BDROID_BUILDCFG_H
+#define CAMERA_PARAMETERS_EXTRA_C \
+const char CameraParameters::CLIENT_PACKAGE_NAME[] = "client-package-name";
 
-#define BTM_DEF_LOCAL_NAME "MiPad"
-// SERVICE_CLASS:0x5A (Bit17 -Networking,Bit19 - Capturing,Bit20 -Object Transfer,Bit22 -Telephony)
-// MAJOR CLASS: COMPUTER
-// MINOR CLASS: TABLET
-#define BTA_DM_COD {0x5A, 0x01, 0x10}
-
-
-
-#endif
+#define CAMERA_PARAMETERS_EXTRA_H \
+    static const char CLIENT_PACKAGE_NAME[];
