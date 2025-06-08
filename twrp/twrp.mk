@@ -6,3 +6,5 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 
+# busybox
+PRODUCT_PACKAGES += busybox
