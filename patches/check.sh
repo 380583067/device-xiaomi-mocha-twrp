@@ -1,8 +1,7 @@
 #!/bin/sh
 
 rootdirectory="$PWD"
-dirs="bionic/libm external/selinux frameworks/native frameworks/av system/extras system/core system/bpf system/libhwbinder" 
-
+dirs="bionic/libm frameworks/base frameworks/native"
 
 RED='\033[0;31m'
 NC='\033[0m'

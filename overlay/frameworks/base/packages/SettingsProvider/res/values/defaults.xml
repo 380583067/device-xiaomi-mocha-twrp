@@ -19,12 +19,6 @@
 <resources>
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
 
-    <!-- enable wifi by default, avoid gapps firstwizard FC -->
-    <bool name="def_wifi_on">true</bool>
-
     <!-- Auto brightness mode is ON by default-->
     <bool name="def_screen_brightness_automatic_mode">true</bool>
-
-    <!-- Doubletap2wake is OFF by default-->
-    <bool name="def_double_tap_to_wake">false</bool>
 </resources>

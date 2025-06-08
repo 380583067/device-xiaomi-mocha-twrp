@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic/libm external/selinux frameworks/native frameworks/av system/extras system/core system/bpf system/libhwbinder" 
+dirs="bionic/libm frameworks/base frameworks/native"
 
 # red + nocolor
 RED='\033[0;31m'

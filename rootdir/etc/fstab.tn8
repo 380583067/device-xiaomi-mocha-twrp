@@ -1,0 +1,27 @@
+# Android fstab file.
+# The filesystem that contains the filesystem e2fsck binary (typically /system) cannot
+# specify 'check', and must come before any filesystems that do specify 'check'
+
+# NOTE: /system and /vendor partitions are now early-mounted and the fstab entries are specified in device tree (duplicated below for recovery image purposes only):
+#       /proc/device-tree/firmware/android/fstab/system
+#       /proc/device-tree/firmware/android/fstab/vendor
+
+#<src>                                          <mnt_point>         <type>    <mnt_flags and options>                               <fs_mgr_flags>
+/dev/block/platform/sdhci-tegra.3/by-name/APP   /system             ext4      ro                                                    wait,recoveryonly
+/dev/block/platform/sdhci-tegra.3/by-name/AP1   /vendor             ext4      ro                                                    wait,recoveryonly
+/dev/block/platform/sdhci-tegra.3/by-name/CAC   /cache              f2fs      noatime,nosuid,nodev,errors=panic                     wait,check
+/dev/block/platform/sdhci-tegra.3/by-name/CAC   /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait,check
+/dev/block/platform/sdhci-tegra.3/by-name/LNX   /boot               emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/MSC   /misc               emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/UDA   /data               f2fs      noatime,nosuid,nodev,errors=panic                     wait,check,latemount,forceencrypt=/dev/block/platform/sdhci-tegra.3/by-name/MD1
+/dev/block/platform/sdhci-tegra.3/by-name/UDA   /data               ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait,check,latemount,forceencrypt=/dev/block/platform/sdhci-tegra.3/by-name/MD1
+/dev/block/platform/sdhci-tegra.3/by-name/RP3   /usercalib          ext4      noatime,data=writeback                                   wait,formattable
+/dev/block/platform/sdhci-tegra.3/by-name/USP   /staging            emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/MDA   /metadata           emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/SOS   /recovery           emmc      defaults                                               defaults
+/devices/platform/sdhci-tegra.2/mmc_host*       auto                vfat      defaults                                              voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/tegra-ehci.0/usb*                    auto                vfat      defaults                                              voldmanaged=usb:auto
+/dev/block/platform/sdhci-tegra.2/by-num/p1     /sdcard             vfat      defaults                                               recoveryonly
+/dev/block/zram0                             none                swap      defaults                                              zramsize=533413200,notrim
+/dev/block/platform/sdhci-tegra.3/by-name/EBT   /bootloader         emmc      defaults                                              defaults
+/dev/block/platform/sdhci-tegra.3/by-name/PST   /persistent         emmc      defaults                                              defaults
