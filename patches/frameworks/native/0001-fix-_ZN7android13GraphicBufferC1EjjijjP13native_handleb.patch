@@ -1,0 +1,12 @@
+diff --git a/libs/ui/Android.bp b/libs/ui/Android.bp
+index 73adb0ae2..bab7b3270 100644
+--- a/libs/ui/Android.bp
++++ b/libs/ui/Android.bp
+@@ -112,4 +112,5 @@ cc_library_shared {
+     ],
+     cppflags: [
+         "-Wextra",
++        "-Werror",
+     ],
+ 
+     sanitize: {
