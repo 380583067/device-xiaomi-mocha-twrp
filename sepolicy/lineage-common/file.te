@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-unix_socket_connect(system_server, gps, gpsd)
-allow system_server gps_device:chr_file rw_file_perms;
+# /sys/devices/platform/7000c000.i2c/i2c-0/0-002c
+type sysfs_pwm_backlight, fs_type, sysfs_type;
 
-allow system_server sysfs_pwm_backlight:file rw_file_perms;
-allow system_server sysfs_smartdimmer:file rw_file_perms;
+# /data/gps
+type gps_data_file, file_type, data_file_type, core_data_file_type;
+type gps_socket, file_type;
