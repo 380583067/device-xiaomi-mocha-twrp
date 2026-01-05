@@ -4,7 +4,7 @@
 /system_image   emmc            /dev/block/platform/sdhci-tegra.3/by-name/APP                 flags=backup=1;flashimg=1
 /vendor         ext4            /dev/block/platform/sdhci-tegra.3/by-name/AP1                 flags=display="Vendor";backup=1;wipeingui;fsflags="barrier=1"
 /vendor_image   emmc            /dev/block/platform/sdhci-tegra.3/by-name/AP1                 flags=backup=1;flashimg=1
-/persist        ext4            /dev/block/platform/sdhci-tegra.3/by-name/PST                 flags=display="Vendor";backup=1;wipeingui;fsflags="barrier=1"
+/persist        ext4            /dev/block/platform/sdhci-tegra.3/by-name/PST                 flags=display="Persist";backup=1;wipeingui;fsflags="barrier=1"
 /persist_image  emmc            /dev/block/platform/sdhci-tegra.3/by-name/PST                 flags=backup=1;flashimg=1
 /cache          ext4            /dev/block/platform/sdhci-tegra.3/by-name/CAC
 /misc           emmc            /dev/block/platform/sdhci-tegra.3/by-name/MSC
